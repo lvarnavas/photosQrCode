@@ -1,0 +1,306 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+body {
+  background: url('/wedding-bg.jpg') center center/cover no-repeat fixed;
+  color: #3a2c2a;
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 0;
+  pointer-events: none;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  color: #b48a78;
+  letter-spacing: 1px;
+  font-size: 5em;
+  line-height: 1.1;
+}
+
+.card, .upload-dropzone, .gallery-card {
+  background: #fff url('/wedding-card-background.jpg') center top/cover no-repeat;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px #e9d6d6cc;
+  padding: 24px;
+  position: relative;
+  z-index: 1;
+  background-blend-mode: lighten;
+}
+
+button {
+  background: #b48a78;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px #e9d6d6cc;
+}
+button:hover, button:focus {
+  background: #a06c5a;
+  color: #fffbe6;
+}
+
+.upload-dropzone {
+  border: 2px dashed #b48a78;
+  background: #fff8f6;
+  transition: background 0.2s, border 0.2s;
+  margin-bottom: 32px;
+}
+.upload-dropzone.active {
+  background: #fbeee6;
+  border-color: #a06c5a;
+}
+
+input[type="file"] {
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+.modal-content {
+  position: relative;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px #0008;
+  padding: 32px 24px 32px 24px;
+  min-width: 400px;
+  max-width: 95vw;
+  max-height: 90vh;
+  text-align: center;
+  z-index: 2001;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wedding-modal-close {
+  background: none !important;
+  color: #222 !important;
+  border: none;
+  border-radius: 0;
+  width: 32px;
+  height: 32px;
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
+  outline: none;
+  box-shadow: none;
+  transition: none;
+}
+.wedding-modal-close:hover {
+  color: #222 !important;
+  background: none !important;
+}
+
+/* Gallery image styling */
+.gallery-image {
+  width: 220px;
+  height: 180px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px #e9d6d6cc;
+  cursor: pointer;
+  margin-bottom: 16px;
+  border: 2px solid #fff6f6;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.gallery-image:hover {
+  border: 2px solid #b48a78;
+  box-shadow: 0 4px 16px #e9d6d6cc;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #f7faff;
+}
+::-webkit-scrollbar-thumb {
+  background: #e9d6d6;
+  border-radius: 8px;
+}
+
+.gallery-modal-content {
+  position: relative;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px #0008;
+  min-width: 320px;
+  max-width: 90vw;
+  max-height: 90vh;
+  text-align: center;
+  z-index: 2001;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+.gallery-modal-close {
+  position: absolute;
+  right: 25px;
+  background: none !important;
+  color: #222 !important;
+  border: none;
+  border-radius: 0;
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
+  outline: none;
+  box-shadow: none;
+  transition: none;
+}
+.gallery-modal-close:hover {
+  color: #fff !important;
+  background: none !important;
+}
+
+/* Remove border and box-shadow from modal image */
+.gallery-modal-content img {
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  background: none !important;
+}
+
+/* --- QR code centering class --- */
+.qr-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .card {
+    max-width: 98vw;
+    padding: 12px;
+    margin: 12px auto;
+  }
+  .modal-content, .gallery-modal-content {
+    min-width: unset;
+    max-width: 98vw;
+    padding: 12px 4px 12px 4px;
+  }
+  h1, h2, h3 {
+    font-size: 4em;
+    line-height: 1.2;
+  }
+  .gallery-image {
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .modal-content button,
+  .card button {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    padding: 10px 0;
+  }
+  .card > div[style*='display: flex'] {
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+  }
+  .upload-dropzone {
+    padding: 12px;
+    font-size: 1em;
+  }
+  .modal-content {
+    min-width: unset;
+    max-width: 98vw;
+    padding: 12px 4px;
+  }
+  .gallery-modal-content {
+    min-width: unset;
+    max-width: 98vw;
+    padding: 8px 2px;
+  }
+  .gallery-modal-content img {
+    border: none !important;
+    padding: 0 !important;
+    background: none !important;
+  }
+  .gallery-modal-close {
+    position: absolute;
+    top: 12px;
+    left: 165px;
+    background: none !important;
+    color: #222 !important;
+    border: none;
+    border-radius: 0;
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    outline: none;
+    box-shadow: none;
+    transition: none;
+  }
+}
