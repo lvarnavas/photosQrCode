@@ -261,6 +261,11 @@ input[type="file"] {
     font-size: 1.1em;
     padding: 10px 0;
   }
+  .share-btn {
+    width: 44px !important;
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+  }
   .card > div[style*='display: flex'] {
     flex-direction: column;
     gap: 8px;
@@ -303,4 +308,95 @@ input[type="file"] {
     box-shadow: none;
     transition: none;
   }
+  .share-btn-tooltip {
+    display: none;
+  }
+  .share-btn-label {
+    display: block;
+  }
+  .share-btn-mobile-text {
+    display: block !important;
+    margin-right: 10px;
+    font-weight: 600;
+    color: #222;
+    font-size: 1.08em;
+    /* background: #ffe0e0; */ /* Uncomment for debugging */
+  }
+  .share-btn-wrapper {
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.share-btn-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.share-btn {
+  background: transparent;
+  border: 1.5px solid #e5cfc6;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px #e9d6d633;
+  padding: 0;
+  cursor: pointer;
+  transition: border 0.2s, box-shadow 0.2s, background 0.2s;
+  outline: none;
+  position: relative;
+}
+.share-btn:hover, .share-btn:focus {
+  border-color: #b48a78;
+  background: #fffbe6;
+  box-shadow: 0 4px 16px #e9d6d688;
+}
+.share-btn svg {
+  display: block;
+  stroke: #b48a78;
+  transition: stroke 0.2s;
+}
+.share-btn:hover svg, .share-btn:focus svg {
+  stroke: #a06c5a;
+}
+.share-btn-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: -38px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fffbe6;
+  color: #b48a78;
+  border: 1px solid #b48a78;
+  border-radius: 8px;
+  padding: 4px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px #e9d6d6cc;
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+.share-btn:hover .share-btn-tooltip,
+.share-btn:focus .share-btn-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+.share-btn-label {
+  display: none;
+  margin-top: 8px;
+  color: #b48a78;
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.share-btn-mobile-text {
+  display: none;
 }
