@@ -64,7 +64,7 @@ const upload = multer({
       cb(new Error('Only image files are allowed'));
     }
   },
-  limits: { fileSize: 1024 * 1024 * 100 } // 100MB max per file
+  limits: { fileSize: 1024 * 1024 * 200 } // 200MB max per file
 });
 
 // Accept multiple images
