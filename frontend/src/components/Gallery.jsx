@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const EVENT_NAME = 'alex-maria-wedding';
+const EVENT_NAME = 'dimitris-matoula-wedding';
 
 export default function Gallery() {
   const [images, setImages] = useState([]);
