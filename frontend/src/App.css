@@ -234,6 +234,9 @@ input[type="file"] {
 }
 
 @media (max-width: 600px) {
+  body {
+    background: url('/wedding-background-mobile.png') center center/cover no-repeat fixed;
+  }
   .card {
     max-width: 98vw;
     padding: 12px;
@@ -326,6 +329,15 @@ input[type="file"] {
     flex-direction: row !important;
     justify-content: center;
     align-items: center;
+  }
+  .card, .gallery-card {
+    background: #fffffff4;
+    border-radius: 18px;
+    box-shadow: 0 1px 3px grey;
+    padding: 24px;
+    position: relative;
+    z-index: 1;
+    background-blend-mode: lighten;
   }
 }
 
